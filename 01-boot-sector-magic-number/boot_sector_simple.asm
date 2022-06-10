@@ -7,7 +7,7 @@
 loop:
 	jmp loop
 
-;fill with x zeros where x max block size(512) - size of magic number (2) - space for
+;fill with x zeros where x max block size(512 bytes) - size of magic number (2 bytes) - space for
 ;previous instruction
 times 510 - ($-$$) db 0
 
