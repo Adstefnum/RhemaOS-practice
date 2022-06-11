@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+dir=$(ls -t */| head -1 | sed s/://g)
+cd $dir
+file=$(ls *.asm)
+nasm -f bin $file -o output.bin
+qemu-system-x86_64 output.bin
+cd ..
