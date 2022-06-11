@@ -2,7 +2,7 @@
 
 dir=$(ls -t */| head -1 | sed s/://g)
 cd $dir
-file=$(ls *.asm)
-nasm -f bin $file -o output.bin
-qemu-system-x86_64 output.bin
+file=$(ls -t *.asm | head -1 |sed s/.asm//)
+nasm -f bin $file.asm -o $file.bin
+qemu-system-x86_64 $file.bin
 cd ..
