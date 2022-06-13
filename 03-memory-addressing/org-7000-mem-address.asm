@@ -2,7 +2,9 @@
 ;to demonstrate memory addressing by retrieving the variable 
 ;stored in memory
 ;this uses the org convention to specify the start of the memory location that
-;the boot loader loaded us to  it is inconvinient
+;the boot loader loaded us to 
+; it is inconvinient to have to calculate and put the individual offsets
+;everywhere in the program
 
 [org 0x7c00]
 
