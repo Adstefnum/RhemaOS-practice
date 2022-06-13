@@ -5,7 +5,7 @@
 mov bx, HELLO_STRING
 call print
 
-call print_nl
+call print_newline
 
 mov bx, GOODBYE_STRING
 call print

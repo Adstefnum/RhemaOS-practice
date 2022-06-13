@@ -23,7 +23,7 @@ print:
 		ret
 
 
-print_nl:
+print_newline:
 	pusha ; push all registers to the stack
 
 	mov ah, 0x0e ; teletype interrupt
