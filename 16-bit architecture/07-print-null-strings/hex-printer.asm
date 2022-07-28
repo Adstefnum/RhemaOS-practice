@@ -1,7 +1,7 @@
 ;this program demonstrates printing hexadecmials
 ;this will be useful in debugging at this low-level
 
-%include "printer.asm"
+%include "../16-bit architecture/07-print-null-strings/printer.asm"
 
 hex_printer:
 	pusha

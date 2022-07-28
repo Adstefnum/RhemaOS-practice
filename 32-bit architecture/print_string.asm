@@ -3,7 +3,7 @@
 VIDEO_MEMORY equ 0xb8000 ;video memory location
 WHITE_ON_BLACK equ 0x0f ;background and foreground color
 
-print_string:
+print_string_pm:
     pusha
     mov edx, VIDEO_MEMORY ;set edx to the start of the video memory
 
