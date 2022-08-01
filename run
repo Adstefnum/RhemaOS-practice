@@ -1,9 +1,0 @@
-#!/usr/bin/bash
-
-dir=$(ls -t */*/| head -1 | sed s/://g)
-cd "$dir"
-file=$(ls -t *.asm | head -1 |sed s/.asm//)
-nasm -f bin "$file.asm" -o "$file.bin"
-qemu-system-x86_64 "$file.bin"
-rm *.bin
-cd ../..

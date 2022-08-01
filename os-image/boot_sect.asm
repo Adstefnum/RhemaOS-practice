@@ -8,22 +8,22 @@ mov bp,0x9000 ;setup stack pointer
 mov sp,bp
 
 mov bx , MSG_REAL_MODE ; Announce that we are starting
-call print ; booting from 16 - bit real mode
+call print ; booting from 16 - bit real modee
 call load_kernel ; Load our kernel
 call switch_to_pm ; Switch to protected mode , from which we will not return
 jmp $
 
-%include "../16-bit architecture/09-reading-from-disk/disk_load.asm"
-%include "../16-bit architecture/07-print-null-strings/printer.asm"
-%include "../16-bit architecture/07-print-null-strings/hex-printer.asm"
-%include "../32-bit architecture/global-descriptor-table.asm"
-%include "../32-bit architecture/print_string.asm"
-%include "../32-bit architecture/switch_to_pm.asm"
+%include "./disk_load.asm"
+%include "printer.asm"
+%include "hex-printer.asm"
+%include "global-descriptor-table.asm"
+%include "print_string.asm"
+%include "switch_to_pm.asm"
 
 [bits 16]
 load_kernel :
 mov bx , MSG_LOAD_KERNEL ; Print a message to say we are loading the kernel
-call print_string
+call print
 mov bx , KERNEL_OFFSET ; Set -up parameters for our disk_load routine , so
 mov dh , 15 ; that we load the first 15 sectors ( excluding
 mov dl , [ BOOT_DRIVE ] ; the boot sector ) from the boot disk ( i.e. our

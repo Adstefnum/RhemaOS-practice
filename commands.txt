@@ -1,0 +1,3 @@
+ alias qemu="qemu-system-x86_64"
+nasm -f bin "$file.asm" -o "$file.bin"
+qemu-system-x86_64 "$file.bin"
